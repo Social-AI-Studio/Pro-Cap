@@ -64,9 +64,29 @@ We next prompt frozen PT-VLMs with questions and cleaned images to obtain Pro-Ca
 Before uploading codes, we re-run the codes. Because of the updating of the versions of transformers package, we observe a small variance compared with the reported performance in the paper. We conclude both the reported results and the re-implemented result in the Figure above. There is no significant difference according to p-value. We share both the re-implemented logger files and the logger files for the reported performance in [codes/logger](codes/logger) and [codes/reported](codes/reporte).
 
 ### Performance of Models
-To obtain our reported performance, please run the script
+To obtain our reported performance, please run the script in [codes/src](codes/src):
+```bash
+bash run.sh
+```
+
+Pay attention to the following values in [codes/src/config.py](codes/src/config.py)  
+- CAP_TYPE to 'vqa'
+- MODEL to 'pbm'
+- change DATA_PATH and CAPTION_PATH to your local path
+- ASK_CAP to 'race,gender,country,animal,valid_disable,religion'
+- set ADD_ENT and ADD_DEM both True if in the augmentation setting or set both False
 
 ### BERT with Pro-Cap
+
+```bash
+bash run.sh
+```
+Pay attention to the following values in [codes/src/config.py](codes/src/config.py)
+- CAP_TYPE to 'vqa'
+- MODEL to 'bert'
+- change DATA_PATH and CAPTION_PATH to your local path
+- ASK_CAP to 'race,gender,country,animal,valid_disable,religion'
+- set ADD_ENT and ADD_DEM both True if in the augmentation setting or set both False
 
 [paper]: https://arxiv.org/abs/2308.08088
 [ronzhu]: https://github.com/HimariO/HatefulMemesChallenge
