@@ -14,8 +14,8 @@ Please leave issues for any questions about the paper or the code.
 
 If you find our code or paper useful, please cite the paper:
 ```
-@inproceedings{ lyu2022zicl,
-    title={ Z-ICL: Zero-Shot In-Context Learning with Pseudo-Demonstrations },
+@inproceedings{ cao2023procap,
+    title={Pro-Cap: Leveraging a Frozen Vision-Language Model for Hateful Meme Detection},
     author={ Rui Cao, Ming Shan Hee, Adriel Kuek, Wen-Haw Chong, Roy Ka-Wei Lee, Jing Jiang},
     journal={ ACM MM },
     year={ 2023 }
@@ -36,21 +36,13 @@ If you find our code or paper useful, please cite the paper:
     * [BERT with Pro-Cap](#bert-with-procap)
 
 ## Installation
-The code is tested with python 3.8.
-
-Create a new conda environment for this project:
-```bash
-conda create --name z-icl python=3.8
-conda activate z-icl
-```
-
-Install the dependencies (`gdown`, `datasets`, `faiss`, `nltk`, `tqdm`, `simcse`, `pytorch`, `transformers`) using the following command:
-```bash
-bash build_dependencies.sh
-```
+The code is tested with python 3.8. To run the code, you should install the package of transformers provided by Huggingface. The code is implemented with the CUDA of 11.2 (you can also implement with other compatible versions) and takes one Tesla V 100 GPU card (with 32G dedicated memory) for model training and inference.
 
 ###
 ## Prepare Datasets  
+We have tested on three benchmarks for hateful meme detection: *Facebook Hateful Meme* (FHM), *Multimedia Automatic Misogyny Identification* (MAMI) and *Harmful Memes* (HarM). Datasets are available online. You can either download datasets via links in the original dataset papers or use the files in the **Data** folder provided by us.
+
+For memes, we conduct data pre-processing such as image resizing, text detection and removal and image impainting according to the [HimariO's project][ronzhu]. In our augmentation setting (i.e., augmentation of entities and demographic, see Section 5.3 for details), we detect entities with Google Vision API and conduct face recognition with FairFace. All augmented information is included in our provided data in the **Data** folder
 
 ## Pro-Cap Generation
 
@@ -60,8 +52,12 @@ bash build_dependencies.sh
 
 
 ## Experiments
-
-### PromptHate with Pro-Cap
+<p align="center">
+  <img src="final-results.JPG" width="80%" height="80%">
+</p>
+### Performance of Models
 
 ### BERT with Pro-Cap
-[paper]: https://arxiv.org/abs/2212.09865
+
+[paper]: https://arxiv.org/abs/2308.08088
+[ronzhu]: https://github.com/HimariO/HatefulMemesChallenge
