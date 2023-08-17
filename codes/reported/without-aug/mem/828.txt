@@ -1,0 +1,71 @@
+DATASET : mem
+MODEL : pbm
+CAP_TYPE : vqa
+DATA : /Data_Storage/Rui_Data_Space/hate-speech
+CAPTION_PATH : /Data_Storage/Rui_Code_Space/hate-speech/CLIP_prefix_caption
+BERT_DIM : 768
+ROBERTA_DIM : 1024
+NUM_LABELS : 2
+POS_WORD : good
+NEG_WORD : bad
+MULTI_QUERY : True
+USE_DEMO : True
+NUM_QUERIES : 4
+FC_DROPOUT : 0.4
+WEIGHT_DECAY : 0.01
+LR_RATE : 1.3e-05
+EPS : 1e-08
+BATCH_SIZE : 16
+FIX_LAYERS : 2
+NUM_SAMPLE : 1
+NUM_MEME_CAP : 0
+MID_DIM : 512
+LENGTH : 65
+MODEL_NAME : allenai/unifiedqa-t5-small
+ASK_CAP : race,gender,country,animal,valid_disable,religion
+CAP_LENGTH : 12
+PRETRAIN_DATA : conceptual
+IMG_VERSION : clean
+ADD_ENT : False
+ADD_DEM : False
+DEBUG : False
+SAVE : False
+SAVE_NUM : 828
+EPOCHS : 10
+SEED : 1118
+CUDA_DEVICE : 15
+WARM_UP : 2000
+Length of training set: 8500, length of testing set: 500
+Max length of sentences: 447
+Epoch 0
+	train_loss: 901.62, accuracy: 66.44
+	evaluation auc: 65.51, accuracy: 58.40
+Epoch 1
+	train_loss: 547.95, accuracy: 76.09
+	evaluation auc: 72.72, accuracy: 66.20
+Epoch 2
+	train_loss: 449.12, accuracy: 81.69
+	evaluation auc: 76.41, accuracy: 66.60
+Epoch 3
+	train_loss: 361.87, accuracy: 85.73
+	evaluation auc: 77.43, accuracy: 68.80
+Epoch 4
+	train_loss: 264.55, accuracy: 89.73
+	evaluation auc: 78.11, accuracy: 68.80
+Epoch 5
+	train_loss: 180.82, accuracy: 93.25
+	evaluation auc: 78.79, accuracy: 67.20
+Epoch 6
+	train_loss: 123.32, accuracy: 95.59
+	evaluation auc: 78.71, accuracy: 68.00
+Epoch 7
+	train_loss: 72.96, accuracy: 97.47
+	evaluation auc: 79.21, accuracy: 70.00
+Epoch 8
+	train_loss: 44.91, accuracy: 98.51
+	evaluation auc: 79.31, accuracy: 70.60
+Epoch 9
+	train_loss: 28.23, accuracy: 99.12
+	evaluation auc: 79.70, accuracy: 70.80
+Maximum epoch: 9
+	evaluation auc: 79.70, accuracy: 70.80
