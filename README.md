@@ -32,6 +32,7 @@ If you find our code or paper useful, please cite the paper:
     * [Step 1: Pre-processing of Datasets](#step-1-preprocessing-of-datasets) (Section 4.2 of the paper)
     * [Step 2: Prompt Frozen PT-VLMs](#step-2-prompt-frozen-ptvlms) (Section 5.2 of the paper)
 4. [Experiments](#experiments) (Section 4 of the paper)
+    * [Performance of Models](#performance-of-models)
     * [PromptHate with Pro-Cap](#prompthate-with-procap)
     * [BERT with Pro-Cap](#bert-with-procap)
 
@@ -60,7 +61,10 @@ We next prompt frozen PT-VLMs with questions and cleaned images to obtain Pro-Ca
 </p>
 
 ### Performance of Models
-Before uploading codes, we re-run the codes. Because of the updating of the versions of transformers package, we observe a small 
+Before uploading codes, we re-run the codes. Because of the updating of the versions of transformers package, we observe a small variance compared with the reported performance in the paper. We conclude both the reported results and the re-implemented result in the Figure above. There is no significant difference according to p-value. We share both the re-implemented logger files and the logger files for the reported performance in [codes/logger](codes/logger) and [codes/reported](codes/reporte).
+
+### Performance of Models
+To obtain our reported performance, please run the script
 
 ### BERT with Pro-Cap
 
